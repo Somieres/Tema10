@@ -6,13 +6,13 @@ public class Main_Ejercicio1 {
         // Se crean 3 Pizzas
 
         Pizza pizza1=new Pizza(Tipo.CUATROQUESOS, Estado.PEDIDA, TamaNoPizza.FAMILIAR);
-        Pizza pizza2=new Pizza(Tipo.CUATROQUESOS, Estado.PEDIDA, TamaNoPizza.FAMILIAR);
-        Pizza pizza3=new Pizza(Tipo.CUATROQUESOS, Estado.PEDIDA, TamaNoPizza.FAMILIAR);
+        Pizza pizza2=new Pizza(Tipo.MARGARITA, Estado.PEDIDA, TamaNoPizza.MEDIANA);
+        Pizza pizza3=new Pizza(Tipo.FUNGHI, Estado.PEDIDA, TamaNoPizza.FAMILIAR);
 
         // Creamos 2 paninnis
 
         Paninni paninni1=new Paninni(Tipo.CUATROQUESOS,Estado.PEDIDA, TamannoPaninni.ALMERIA);
-        Paninni paninni2=new Paninni(Tipo.CUATROQUESOS,Estado.PEDIDA, TamannoPaninni.SEVILLA);
+        Paninni paninni2=new Paninni(Tipo.MARGARITA,Estado.PEDIDA, TamannoPaninni.SEVILLA);
 
         // servimos dos pizzas y 1 paninni
 
