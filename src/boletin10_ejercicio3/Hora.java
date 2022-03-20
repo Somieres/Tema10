@@ -3,7 +3,7 @@ package boletin10_ejercicio3;
 public class Hora {
 
     private int hora;
-    private int minutos;
+    private int minutos= 00;
 
     public Hora() {
     }
@@ -36,7 +36,6 @@ public class Hora {
      public void inc(){
 
          this.minutos++;
-
          if (this.minutos>59){
              this.hora+=1;
              this.minutos=00;
@@ -46,6 +45,7 @@ public class Hora {
          }
 
      }
+
 
     @Override
     public String toString() {

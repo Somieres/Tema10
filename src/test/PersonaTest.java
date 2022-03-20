@@ -1,4 +1,4 @@
-package test;
+/*package test;
 
 import org.junit.Assert;
 import org.junit.jupiter.api.AfterEach;
@@ -41,4 +41,4 @@ class PersonaTest {
     void setEdad() {
     }
 
-}
+}*/
