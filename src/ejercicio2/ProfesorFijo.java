@@ -9,6 +9,7 @@ public class ProfesorFijo extends Trabajador {
     private int id;
     private Date fechaOposicion;
     private TipoTrabajo tipoTrabajo;
+    static int numDirectores=0;
 
     public ProfesorFijo() {
 
@@ -18,7 +19,14 @@ public class ProfesorFijo extends Trabajador {
         super(nombre, apellido, edad);
         this.id = id;
         this.fechaOposicion = fechaOposicion;
-        this.tipoTrabajo = tipoTrabajo;
+
+        if (tipoTrabajo==TipoTrabajo.DIRECTOR && numDirectores==1){
+            System.out.println("Ya exite un director dado de alta");
+            System.out.println(super.toString() + " ha sido dado de alta como profesor");
+            this.tipoTrabajo=TipoTrabajo.PROFESOR;
+        }else {
+            this.tipoTrabajo = tipoTrabajo;
+        }
     }
 
     public int getId() {
