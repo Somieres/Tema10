@@ -39,7 +39,7 @@ public class Trabajador {
         this.edad = edad;
     }
 
-    public void intercambiarCargo();
+   // public void intercambiarCargo();
 
     @Override
     public String toString() {

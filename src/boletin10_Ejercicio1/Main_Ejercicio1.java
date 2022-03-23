@@ -30,7 +30,7 @@ public class Main_Ejercicio1 {
         System.out.println("El total de pizzas servidas es: " +Pizza.contPizzaServida);
         System.out.println("El total de paninnis pedidos es: " + Paninni.contPaninniPedido);
         System.out.println("El total de paninnis pedidos es: " + Paninni.contPaninniServido);
-        System.out.println("El total de pedidos es "+ Pizzeria.contPedidos);
+       // System.out.println("El total de pedidos es "+ Pizzeria.contPedidos);
         System.out.println("El total de servidos es "+ Pizzeria.contServidos);
     }
 

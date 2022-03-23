@@ -8,6 +8,8 @@ public class Paninni extends Pizzeria{
     protected static int contPaninniPedido=0;
     protected static int contPaninniServido=0;
 
+
+
     public Paninni(Tipo tipo, Estado estadoPedido, TamannoPaninni tamaño) {
         super(tipo, estadoPedido);
         this.tamaño = tamaño;

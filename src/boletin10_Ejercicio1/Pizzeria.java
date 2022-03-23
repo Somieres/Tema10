@@ -4,16 +4,18 @@ enum Estado {PEDIDA, SERVIDA}
 
  public class Pizzeria {
 
-    protected Tipo tipo;
-    protected Estado estadoPedido;
-    protected static int contPedidos=0;
-     protected static int contServidos=0;
+    private Tipo tipo;
+    private Estado estadoPedido;
+    private static int contPedidos=0;
+    private static int contServidos=0;
 
      public Pizzeria(Tipo tipo, Estado estadoPedido) {
          this.tipo = tipo;
          this.estadoPedido = estadoPedido;
          contPedidos++;
      }
+
+
 
      public Tipo getTipo() {
          return tipo;
@@ -39,8 +41,7 @@ enum Estado {PEDIDA, SERVIDA}
 
      @Override
      public String toString() {
-         return "Pizzeria{" +
-                 "tipo=" + tipo +
+         return "La pizza " + "tipo=" + tipo +
                  ", estadoPedido=" + estadoPedido +
                  '}';
      }
