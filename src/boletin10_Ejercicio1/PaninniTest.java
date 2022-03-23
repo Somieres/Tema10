@@ -1,4 +1,4 @@
-package boletin10_Ejercicio1;
+/*package boletin10_Ejercicio1;
 
 import org.junit.jupiter.api.Test;
 
@@ -10,4 +10,4 @@ class PaninniTest {
     void servir() {
 
     }
-}
+}*/

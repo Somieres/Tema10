@@ -1,4 +1,4 @@
-package boletin10_Ejercicio1;
+/*package boletin10_Ejercicio1;
 
 import org.junit.jupiter.api.Test;
 
@@ -16,4 +16,4 @@ class PizzeriaTest {
         assertEquals(contadorAntes+1,Pizzeria.contServidos,"ESTA MAL");
 
     }
-}
+}*/

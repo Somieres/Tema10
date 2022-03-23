@@ -8,8 +8,8 @@ public class EjerciciosClase {
     public static int[] num1={1,4,8,12,45,0,7,32,62,78,18};
     public static int[] num2={1,4,8,12,45,0,7,32,62,78,18};
     public static int[] num3={1,4,8,12,45,0,7,32,62,78,18};
-    public static int[] num4={1,2,3,4,6,7,8,9,10};
-    public static char[] letras ={'a','b','c','d','e','f','g','i','j'};
+    public static int[] num4={1,2,4,6,7,8,9,10,11};
+    public static char[] letras ={'a','c','d','e','f','g','h','i','j'};
 
     public static void main(String[] args) {
 
@@ -46,7 +46,38 @@ public class EjerciciosClase {
         System.out.println(Arrays.toString(letras2));
         System.out.println(Arrays.binarySearch(letras2,'h'));
 
+
+        System.out.println(Arrays.toString(num4));
+       introducirLetra(num4,3);
+       System.out.println(Arrays.toString(num1));
+
     }
 
+    /**
+     * a traves de este metodo lo que queremos hacer es introducir un caracter en la posicion correspondiente
+     * para ello hemos creado un bucle for en el que le hemos indicado, que cuando el caracter sea mayor
+     * que el que le hemos introducido por parametros, ese se guarde en una variable local, damos el valor del
+     * caracter a la posicion indicada y el caracter que se encontraba en esa posicion pase a la posicion siguiente
+     * @param num4
+     * @param numero
+     */
+   public static void introducirLetra(int[] array, int numero){
+
+        int posicion=0;
+        int aux;
+
+        for (int i=0;i<array.length-1;i++){
+            for (int j = 0; j < array.length; j++) {
+                if (array[j]>numero){
+                    aux=array[j];
+                    array[j]=numero;
+                    array[j+1]=aux;
+            }
+
+
+            }
+        }
+
+    }
 
 }

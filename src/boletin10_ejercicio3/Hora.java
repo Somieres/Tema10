@@ -49,6 +49,21 @@ public class Hora {
 
     @Override
     public String toString() {
-        return  this.hora +":" + this.minutos;
+         String mensajeHora="";
+
+         if (this.hora<10 && this.minutos<10){
+             mensajeHora="0"+getHora() +":0" + getMinutos();
+
+         }else if (this.hora<=9 ){
+            mensajeHora="0"+getHora() +":" + getMinutos();
+
+        }else if (this.minutos<10){
+            mensajeHora=getHora() +":0" + getMinutos();
+
+        }
+         else{
+             mensajeHora= getHora()+":"+getMinutos();
+         }
+        return  mensajeHora;
     }
 }

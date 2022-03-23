@@ -20,16 +20,14 @@ public class Hora12 extends Hora {
         super.inc();
 
         if(getHora()>12 && this.amPm==AmPm.AM){
-            setHora(01);
+            setHora(1);
             this.amPm=AmPm.PM;
         }
         if(getHora()>12 && this.amPm==AmPm.PM){
-            setHora(01);
+            setHora(1);
             this.amPm=AmPm.AM;
         }
     }
-
-
 
 
     @Override
