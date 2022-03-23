@@ -6,8 +6,8 @@ enum Estado {PEDIDA, SERVIDA}
 
     private Tipo tipo;
     private Estado estadoPedido;
-    private static int contPedidos=0;
-    private static int contServidos=0;
+     static int contPedidos=0;
+     static int contServidos=0;
 
      public Pizzeria(Tipo tipo, Estado estadoPedido) {
          this.tipo = tipo;

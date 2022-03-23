@@ -13,7 +13,7 @@ class PizzeriaTest {
          Pizzeria papaFritaPizzeria=new Pizzeria(Tipo.CUATROQUESOS,Estado.PEDIDA);
         int contadorAntes=Pizzeria.contServidos;
         papaFritaPizzeria.servir();
-        assertEquals(contadorAntes++,Pizzeria.contServidos,"ESTA MAL");
+        assertEquals(contadorAntes+1,Pizzeria.contServidos,"ESTA MAL");
 
     }
 }
