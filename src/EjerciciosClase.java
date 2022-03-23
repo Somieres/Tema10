@@ -45,6 +45,7 @@ public class EjerciciosClase {
         Arrays.sort(letras2);
         System.out.println(Arrays.toString(letras2));
         System.out.println(Arrays.binarySearch(letras2,'h'));
+
     }
 
 
