@@ -9,7 +9,7 @@ public class EjerciciosClase {
     public static int[] num2={1,4,8,12,45,0,7,32,62,78,18};
     public static int[] num3={1,4,8,12,45,0,7,32,62,78,18};
     public static int[] num4={1,2,4,6,7,8,9,10,11};
-    public static char[] letras ={'a','c','d','e','f','g','h','i','j'};
+    public static char[] letras ={'a','b','c','d','e','f','g','i','j'};
 
     public static void main(String[] args) {
 
@@ -37,45 +37,50 @@ public class EjerciciosClase {
 
         char[] letras2= Arrays.copyOf(letras,letras.length+10);
         System.out.println(Arrays.toString(letras));
-         System.out.println("Copia de letras a letras2 y le aumentamos 10 posiciones");
+        System.out.println("Copia de letras a letras2 y le aumentamos 10 posiciones");
         System.out.println(Arrays.toString(letras2));
         System.out.println(Arrays.binarySearch(letras,'h'));
         Arrays.fill(letras2,letras.length, letras2.length,'~');
-
         Arrays.sort(letras2);
         System.out.println(Arrays.toString(letras2));
-        System.out.println(Arrays.binarySearch(letras2,'h'));
+        System.out.println(-Arrays.binarySearch(letras2,'h')-1);
 
+      int inicio= letras.length;
 
-        System.out.println(Arrays.toString(num4));
-       introducirLetra(num4,3);
-       System.out.println(Arrays.toString(num1));
+     introducirLetra(letras2,'h',inicio);
+       System.out.println(Arrays.toString(letras2));
+        System.out.println(Arrays.binarySearch(letras, 'a'));
+         borrarPosicion(letras,inicio);
+        System.out.println(Arrays.toString(letras));
+
 
     }
 
-    /**
-     * a traves de este metodo lo que queremos hacer es introducir un caracter en la posicion correspondiente
-     * para ello hemos creado un bucle for en el que le hemos indicado, que cuando el caracter sea mayor
-     * que el que le hemos introducido por parametros, ese se guarde en una variable local, damos el valor del
-     * caracter a la posicion indicada y el caracter que se encontraba en esa posicion pase a la posicion siguiente
-     * @param num4
-     * @param numero
-     */
-   public static void introducirLetra(int[] array, int numero){
-
-        int posicion=0;
-        int aux;
-
-        for (int i=0;i<array.length-1;i++){
-            for (int j = 0; j < array.length; j++) {
-                if (array[j]>numero){
-                    aux=array[j];
-                    array[j]=numero;
-                    array[j+1]=aux;
-            }
 
 
-            }
+      public static void introducirLetra(char [] array, char letra, int inicio ){
+
+
+         int indicePosicion=(-Arrays.binarySearch(letras,'h')-1);
+
+
+        for (int i=inicio-1;i>=indicePosicion;i--){
+            array[i+1]=array[i];
+
+        }
+        array[indicePosicion]=letra;
+    }
+
+    public static void borrarPosicion(char [] array, int fin){
+
+
+        int indicePosicion=Arrays.binarySearch(letras,'a');
+        char aux;
+        for (int i=fin-1;i>=indicePosicion+1;i--){
+
+            aux=array[i-1];
+            array[i-1]=array[i];
+            array[i]=aux;
         }
 
     }
