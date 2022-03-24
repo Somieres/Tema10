@@ -16,10 +16,12 @@ public class EjerciciosClase {
         //imprimimos el array entero
         System.out.println(Arrays.toString(num1));
 
+
+        // con este metodo podemos darle un valor desde una posicion de inicio hasta una final
         Arrays.fill(num1,-4);
         System.out.println(Arrays.toString(num1));
 
-        // con este metodo podemos darle un valor desde una posicion de inicio hasta una final
+
         Arrays.fill(num1,5,8,50);
         System.out.println(Arrays.toString(num1));
 
@@ -33,7 +35,7 @@ public class EjerciciosClase {
         System.out.println("El numero buscado no se encuentra en el array deberia estar en la posicion "+
                 (-Arrays.binarySearch(num4,5)-1));
 
-        //
+
 
         char[] letras2= Arrays.copyOf(letras,letras.length+10);
         System.out.println(Arrays.toString(letras));
@@ -50,14 +52,19 @@ public class EjerciciosClase {
      introducirLetra(letras2,'h',inicio);
        System.out.println(Arrays.toString(letras2));
         System.out.println(Arrays.binarySearch(letras, 'a'));
-         borrarPosicion(letras,inicio);
-        System.out.println(Arrays.toString(letras));
+
 
 
     }
 
 
-
+    /**
+     * Este metodo lo que hace es que busca la posicion en la que deberia estar un caracter en este caso y corre un espacio a la derecha
+     * para introducir el caracter deseado
+     * @param array
+     * @param letra
+     * @param inicio
+     */
       public static void introducirLetra(char [] array, char letra, int inicio ){
 
 
@@ -71,18 +78,6 @@ public class EjerciciosClase {
         array[indicePosicion]=letra;
     }
 
-    public static void borrarPosicion(char [] array, int fin){
 
-
-        int indicePosicion=Arrays.binarySearch(letras,'a');
-        char aux;
-        for (int i=fin-1;i>=indicePosicion+1;i--){
-
-            aux=array[i-1];
-            array[i-1]=array[i];
-            array[i]=aux;
-        }
-
-    }
 
 }

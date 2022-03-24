@@ -1,13 +1,14 @@
 package ejercicio2;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 enum TipoTrabajo{ DIRECTOR, JEFE_DE_ESTUDIOS, SECRETARIO, JEFE_DE_DEPARTAMENTO, PROFESOR}
 
 public class ProfesorFijo extends Trabajador {
 
-    private int id;
-    private Date fechaOposicion;
+    static private int id;
+    private LocalDate fechaOposicion;
     private TipoTrabajo tipoTrabajo;
     static int numDirectores=0;
 
@@ -15,10 +16,9 @@ public class ProfesorFijo extends Trabajador {
 
     }
 
-    public ProfesorFijo(String nombre, String apellido, int edad, int id, Date fechaOposicion, TipoTrabajo tipoTrabajo) {
+    public ProfesorFijo(String nombre, String apellido, int edad, TipoTrabajo tipoTrabajo) {
+
         super(nombre, apellido, edad);
-        this.id = id;
-        this.fechaOposicion = fechaOposicion;
 
         if (tipoTrabajo==TipoTrabajo.DIRECTOR && numDirectores==1){
             System.out.println("Ya exite un director dado de alta");
@@ -27,6 +27,8 @@ public class ProfesorFijo extends Trabajador {
         }else {
             this.tipoTrabajo = tipoTrabajo;
         }
+        id++;
+        numDirectores++;
     }
 
     public int getId() {
@@ -37,16 +39,22 @@ public class ProfesorFijo extends Trabajador {
         this.id = id;
     }
 
-    public Date getFechaOposicion() {
+    public LocalDate getFechaOposicion() {
         return fechaOposicion;
     }
 
-    public void setFechaOposicion(Date fechaOposicion) {
+    public void setFechaOposicion(LocalDate fechaOposicion) {
         this.fechaOposicion = fechaOposicion;
     }
 
     public TipoTrabajo getTipoTrabajo() {
         return tipoTrabajo;
+    }
+
+    @Override
+    public String toString() {
+        return "tiene el id= " + id +
+                " es un " + tipoTrabajo;
     }
 
 

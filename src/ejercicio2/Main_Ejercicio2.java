@@ -6,4 +6,15 @@ public class Main_Ejercicio2 {
 el cargo de dos profesores, consultar el periodo de tiempo que va a estar un interino en el instituto,
 cuánto tiempo le queda a ese interino en el instituto, renovar su periodo de interinidad.
      */
+    public static void main(String[] args) {
+
+        ProfesorFijo prof1=new ProfesorFijo("Lucia","Delgado",30,TipoTrabajo.DIRECTOR);
+
+        System.out.println(prof1);
+
+        ProfesorFijo prof2=new ProfesorFijo("Maria","Delgado",42,TipoTrabajo.DIRECTOR);
+
+        System.out.println(prof2);
+    }
+
 }
