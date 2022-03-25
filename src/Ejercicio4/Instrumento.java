@@ -6,7 +6,7 @@ abstract public class Instrumento {
 
     //atributos
 
-    static boolean flag = true;
+
     protected final int MAXIMO_NOTAS = 100;
     protected Notas[] notasMusicales = new Notas[MAXIMO_NOTAS];
     static int numNotas=0;
@@ -25,7 +25,7 @@ abstract public class Instrumento {
             notasMusicales[numNotas]=nota;
             numNotas++;
 
-            flag = false;
+
 
         }else {
             System.out.println("No se pueden meter más notas!");

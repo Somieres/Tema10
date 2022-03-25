@@ -1,5 +1,5 @@
 package Ejercicio4;
 
-public class Campana {
+public class Campana extends Instrumento{
 
 }

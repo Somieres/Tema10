@@ -1,4 +1,7 @@
 package Ejercicio4;
 
-public class Piano {
+public class Piano extends Instrumento{
+
+
+
 }
