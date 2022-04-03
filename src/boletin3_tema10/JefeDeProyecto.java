@@ -141,7 +141,7 @@ public class JefeDeProyecto extends Empleado implements CambiosEmpresa{
     }
 
     public void darBaja(Programador programador) {
-        listaTrabajadores.remove(programador);
+        listaTrabajadores.remove( programador.);
     }
     public void gestionarProyectos(Programador.Proyecto proyecto){
       listaProyectos.add(proyecto);
