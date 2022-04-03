@@ -1,4 +1,4 @@
-package boletin10_Ejercicio1;
+package ejercicio1;
 
 public class Main_Ejercicio1 {
 

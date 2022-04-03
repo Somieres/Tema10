@@ -82,7 +82,7 @@ public class Cliente {
      */
     @Override
     public String toString() {
-        return "nombre " + this.nombre +
-                ", su dni es " + this.dni + " y su edad" + this.edad+ System.lineSeparator();
+        return "El cliente se llama " + this.nombre +
+                " con dni " + this.dni + " y tiene " + this.edad+ " años"+ System.lineSeparator();
     }
 }

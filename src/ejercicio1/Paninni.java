@@ -1,4 +1,4 @@
-package boletin10_Ejercicio1;
+package ejercicio1;
 
 enum TamannoPaninni{ALMERIA, GRANADA, SEVILLA}
 public class Paninni extends Pizzeria{

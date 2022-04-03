@@ -1,4 +1,4 @@
-package boletin10_ejercicio3;
+package ejercicio3;
 
 enum AmPm{AM,PM}
 

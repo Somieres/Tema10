@@ -31,7 +31,7 @@ public class Main_ejercicio_clase_28 {
         System.out.println(listaCliente.contains(new Cliente("Pepa","22222B", 58)));
 
 
-            System.out.println(listaCliente);
+            System.out.println(cliente);
 
 
     }

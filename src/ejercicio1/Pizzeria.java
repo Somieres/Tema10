@@ -1,4 +1,4 @@
-package boletin10_Ejercicio1;
+package ejercicio1;
 enum Tipo {MARGARITA,CUATROQUESOS,FUNGHI}
 enum Estado {PEDIDA, SERVIDA}
 

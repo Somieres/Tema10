@@ -1,4 +1,4 @@
-package boletin10_ejercicio3;
+package ejercicio3;
 
 public class Main_Ejercicio3 {
     public static void main(String[] args) {
