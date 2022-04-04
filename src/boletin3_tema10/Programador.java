@@ -25,7 +25,8 @@ public class Programador extends Empleado implements CambiosEmpresa {
     Tecnologia tecnologia;
 
 
-    public Programador(String nombre, String apellidos, String DNI, LocalDate antEmpresa, Empleado supervisor, Portatil portatil,  Proyecto proyecto, Tecnologia tecnologia) {
+    public Programador(String nombre, String apellidos, String DNI, LocalDate antEmpresa, Empleado supervisor, Portatil portatil,
+                       Proyecto proyecto, Tecnologia tecnologia) {
         super(nombre, apellidos, DNI, antEmpresa, supervisor);
         this.portatil = portatil;
         this.tfnoMovil = 658854458;
@@ -33,19 +34,8 @@ public class Programador extends Empleado implements CambiosEmpresa {
         this.tecnologia = tecnologia;
     }
 
-    public Programador(String nombre, String apellidos, String DNI, LocalDate antEmpresa, Portatil portatil,  Proyecto proyecto, Tecnologia tecnologia) {
-        super(nombre, apellidos, DNI, antEmpresa,null);
-        this.portatil = portatil;
-        this.tfnoMovil = 658854458;
-        this.proyecto = proyecto;
-        this.tecnologia = tecnologia;
+    public Programador() {
     }
-    public Programador(String nombre, String DNI,LocalDate antEmpresa, Empleado supervisor) {
-        super (nombre,  DNI, antEmpresa, supervisor);
-
-
-    }
-
 
     public Portatil getPortatil() {
         return portatil;
@@ -82,7 +72,8 @@ public class Programador extends Empleado implements CambiosEmpresa {
     @Override
     public String toString() {
         return super.toString()+" Es PROGRAMADOR, su PROYECTO es " + this.proyecto+
-                " y la tecnologia es " + this.tecnologia+"."+portatil.toString()+System.lineSeparator();
+                " y la tecnologia es " + this.tecnologia+"."+portatil.toString()+System.lineSeparator()+
+                "------------------------------------------------------------------------------------------------------";
     }
 
 

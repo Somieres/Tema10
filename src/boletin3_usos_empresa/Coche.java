@@ -43,7 +43,7 @@ public class Coche {
 
     @Override
     public String toString() {
-        return " Su coche de empresa tiene matricula "+this.matricula+", la marca es "+this.marca+" y el modelo" +
+        return "Coche empresa matricula "+this.matricula+", la marca es "+this.marca+" y el modelo" +
                 "es "+ this.modelo+".";
     }
 }

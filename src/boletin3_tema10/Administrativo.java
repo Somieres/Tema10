@@ -43,7 +43,8 @@ public class Administrativo extends Empleado{
 
     @Override
     public String toString() {
-        return super.toString()+ " Es ADMINISTRATIVO, su DESPACHO es "+ this.numDespacho+ "."+System.lineSeparator();
+        return super.toString()+ " Es ADMINISTRATIVO, su DESPACHO es "+ this.numDespacho+ "."+System.lineSeparator()+
+                "------------------------------------------------------------------------------------------------------";
     }
 
 

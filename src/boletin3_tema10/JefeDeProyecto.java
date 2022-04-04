@@ -88,7 +88,8 @@ public class JefeDeProyecto extends Empleado implements CambiosEmpresa{
     public String toString() {
         return super.toString() + " Su cargo es jefe de proyecto su despacho es el numero " + this.numDespacho +System.lineSeparator()+
                 " " + coche.toString() + " " + portatil.toString() + " tiene como administrativo a " + this.administrativo.getNombre() +System.lineSeparator()+
-                " y la tecnologia con la que trabaja es " + this.tecnologia + "." + System.lineSeparator();
+                " y la tecnologia con la que trabaja es " + this.tecnologia + "." +System.lineSeparator()+
+                "------------------------------------------------------------------------------------------------------";
     }
 
     @Override
@@ -143,14 +144,13 @@ public class JefeDeProyecto extends Empleado implements CambiosEmpresa{
     public void darBaja(Programador programador) {
         listaTrabajadores.remove(listaTrabajadores.indexOf(programador));
     }
+
     public void gestionarProyectos(Programador.Proyecto proyecto){
       listaProyectos.add(proyecto);
     }
+
     public void dejarGestionProyectos(Programador.Proyecto proyecto){
       listaProyectos.remove(listaProyectos.indexOf(proyecto));
-    }
-    public String devolverTrabajador(){
-        return "El programador se llama "+ getNombre() + ", su DNI es "+getDNI()+"."+System.lineSeparator();
     }
 
     public void mostrarListaTrabajadores( ){

@@ -14,8 +14,10 @@ public abstract class Empleado {
     protected Empleado supervisor = null;
 
     public Empleado() {
-
+        this.nombre = "Amadeo";
+        this.DNI = "0000000Xx";
     }
+
     public Empleado(String nombre, String apellidos, String DNI, LocalDate antEmpresa, Empleado supervisor) {
         this.nombre = nombre;
         this.apellidos=apellidos;
@@ -24,13 +26,8 @@ public abstract class Empleado {
         this.antEmpresa = antEmpresa;
         this.telefono = 358485569;
         this.salario = 35000;
-        if (supervisor != null){
-            this.supervisor = supervisor;
-        }
-
+        this.supervisor = supervisor;
     }
-
-
 
     public String getNombre() {
         return nombre;
@@ -94,9 +91,10 @@ public abstract class Empleado {
 
     @Override
     public String toString() {
-        return "Su nombre " + this.nombre +" apellidos "+ this.apellidos +", DNI " + this.DNI +
-                ", es empleado desde " + this.antEmpresa + ", sueldo " + this.salario +
-                " su supervisor es " + this.supervisor + "."+System.lineSeparator();
+        return "Nombre " + this.nombre +" "+ this.apellidos +", DNI " + this.DNI +
+                ", empleado desde " + this.antEmpresa + ", salario " + this.salario +
+                " su supervisor es " +this.supervisor.getNombre()+ "."+System.lineSeparator();
+
     }
 
     public void cambioSupervisor(Empleado supervisor) {
