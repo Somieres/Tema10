@@ -11,8 +11,8 @@ public class Administrativo extends Empleado{
 
     }
 
-    public Administrativo(String nombre, String DNI, LocalDate antEmpresa, String supervisor, int numDespacho) {
-        super(nombre, DNI, antEmpresa, supervisor);
+    public Administrativo(String nombre, String apellidos, String DNI, LocalDate antEmpresa, Empleado supervisor, int numDespacho) {
+        super(nombre, apellidos, DNI, antEmpresa, supervisor);
         this.numDespacho = numDespacho;
         this.numFax = 958485155;
     }
@@ -43,8 +43,7 @@ public class Administrativo extends Empleado{
 
     @Override
     public String toString() {
-        return super.toString()+ " Este empleado es administrativo, su numero de despacho es "+ this.numDespacho+
-                "y su fax es "+this.numFax+"."+System.lineSeparator();
+        return super.toString()+ " Es ADMINISTRATIVO, su DESPACHO es "+ this.numDespacho+ "."+System.lineSeparator();
     }
 
 

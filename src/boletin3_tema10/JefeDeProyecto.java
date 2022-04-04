@@ -34,9 +34,9 @@ public class JefeDeProyecto extends Empleado implements CambiosEmpresa{
 
 
 
-    public JefeDeProyecto(String nombre, String DNI, LocalDate antEmpresa, Empleado supervisor,
+    public JefeDeProyecto(String nombre, String apellidos, String DNI, LocalDate antEmpresa, Empleado supervisor,
                           int numDespacho, Coche coche, Portatil portatil, Administrativo administrativo, Programador.Tecnologia tecnologia) {
-        super(nombre, DNI, antEmpresa, supervisor);
+        super(nombre, apellidos , DNI, antEmpresa, supervisor);
         this.numDespacho = numDespacho;
         this.coche = coche;
         this.portatil = portatil;
@@ -86,8 +86,8 @@ public class JefeDeProyecto extends Empleado implements CambiosEmpresa{
 
     @Override
     public String toString() {
-        return super.toString() + " Su cargo es jefe de proyecto su despacho es el numero " + this.numDespacho +
-                " " + coche.toString() + " " + portatil.toString() + " tiene como administrativo a " + this.administrativo.getNombre() +
+        return super.toString() + " Su cargo es jefe de proyecto su despacho es el numero " + this.numDespacho +System.lineSeparator()+
+                " " + coche.toString() + " " + portatil.toString() + " tiene como administrativo a " + this.administrativo.getNombre() +System.lineSeparator()+
                 " y la tecnologia con la que trabaja es " + this.tecnologia + "." + System.lineSeparator();
     }
 
@@ -102,7 +102,7 @@ public class JefeDeProyecto extends Empleado implements CambiosEmpresa{
     public void cambiarAdministrativo(Administrativo administrativo) {
 
         if (this.administrativo.getDNI().equals(administrativo.getDNI())) {
-            System.out.println("Usted ya tiene asignado ese administrativo");
+            System.out.println("Usted ya tiene asignado ese ADMINISTRATIVO");
         } else {
             this.administrativo = administrativo;
         }
@@ -110,7 +110,7 @@ public class JefeDeProyecto extends Empleado implements CambiosEmpresa{
 
     public void cambiarCoche(Coche coche) {
         if (this.coche.getMatricula().equals(coche.getMatricula())) {
-            System.out.println("Usted ya tiene asignado ese vehiculo" + System.lineSeparator());
+            System.out.println("Usted ya tiene asignado ese VEHICULO" + System.lineSeparator());
         } else {
             this.coche = coche;
         }
@@ -120,7 +120,7 @@ public class JefeDeProyecto extends Empleado implements CambiosEmpresa{
     @Override
     public void cambioTecnologia(Programador.Tecnologia tecnologia) {
         if (this.tecnologia.equals(tecnologia)) {
-            System.out.println("Esta trabajando con esa tecnologia por lo tanto no tiene sentido el cambio");
+            System.out.println("Esta trabajando con esa TECNOLOGIA por lo tanto no tiene sentido el cambio");
         } else {
 
             this.tecnologia = tecnologia;
@@ -130,7 +130,7 @@ public class JefeDeProyecto extends Empleado implements CambiosEmpresa{
     @Override
     public void cambiarPortatil(Portatil portatil) {
         if (this.portatil.getNumSerie().equals(portatil.getNumSerie())) {
-            System.out.println("Imposible, ya dispone usted de ese portatil" + System.lineSeparator());
+            System.out.println("Imposible, ya dispone usted de ese PORTATIL" + System.lineSeparator());
         } else {
             this.portatil = portatil;
         }
@@ -141,23 +141,24 @@ public class JefeDeProyecto extends Empleado implements CambiosEmpresa{
     }
 
     public void darBaja(Programador programador) {
-        listaTrabajadores.remove( programador.);
+        listaTrabajadores.remove(listaTrabajadores.indexOf(programador));
     }
     public void gestionarProyectos(Programador.Proyecto proyecto){
       listaProyectos.add(proyecto);
     }
     public void dejarGestionProyectos(Programador.Proyecto proyecto){
-      listaProyectos.remove(proyecto);
+      listaProyectos.remove(listaProyectos.indexOf(proyecto));
     }
     public String devolverTrabajador(){
         return "El programador se llama "+ getNombre() + ", su DNI es "+getDNI()+"."+System.lineSeparator();
     }
 
-    public void mostrarListaTrabajadores(ArrayList listaTrabajadores){
+    public void mostrarListaTrabajadores( ){
 
+        System.out.println(listaTrabajadores+System.lineSeparator());
         Iterator miIterador=listaTrabajadores.iterator();
 
-        while (miIterador.hasNext()){
+        for (;miIterador.hasNext();){
             System.out.println(miIterador.next().toString());
         }
     }

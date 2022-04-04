@@ -2,29 +2,35 @@ package boletin3_tema10;
 
 import java.time.LocalDate;
 
-public class Empleado {
+public abstract class Empleado {
 
     protected String nombre;
+    protected String apellidos;
     protected String DNI;
     protected String direccion;
     protected LocalDate antEmpresa;
     protected int telefono;
     protected double salario;
-    protected Empleado supervisor;
+    protected Empleado supervisor = null;
 
     public Empleado() {
 
     }
-
-    public Empleado(String nombre, String DNI, LocalDate antEmpresa, Empleado supervisor) {
+    public Empleado(String nombre, String apellidos, String DNI, LocalDate antEmpresa, Empleado supervisor) {
         this.nombre = nombre;
+        this.apellidos=apellidos;
         this.DNI = DNI;
         this.direccion = "C/ La Pantomima";
         this.antEmpresa = antEmpresa;
         this.telefono = 358485569;
         this.salario = 35000;
-        this.supervisor = supervisor;
+        if (supervisor != null){
+            this.supervisor = supervisor;
+        }
+
     }
+
+
 
     public String getNombre() {
         return nombre;
@@ -32,6 +38,14 @@ public class Empleado {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public String getApellidos() {
+        return apellidos;
+    }
+
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
     }
 
     public String getDNI() {
@@ -80,25 +94,19 @@ public class Empleado {
 
     @Override
     public String toString() {
-        return "El empleado, se llama " + this.nombre + ", su DNI es " + this.DNI + ", su direccion es " + this.direccion +
-                ", es empleado de la empresa desde " + this.antEmpresa + ", su telefono es " + this.telefono + ", su sueldo es de " + this.salario +
-                " y su supervisor es " + this.supervisor + ".";
+        return "Su nombre " + this.nombre +" apellidos "+ this.apellidos +", DNI " + this.DNI +
+                ", es empleado desde " + this.antEmpresa + ", sueldo " + this.salario +
+                " su supervisor es " + this.supervisor + "."+System.lineSeparator();
     }
 
     public void cambioSupervisor(Empleado supervisor) {
 
-        if (this.supervisor.getNombre().equals(supervisor.getNombre())) {
-            System.out.println("No se puede cambiar por ese supervisor ya que es el mismo");
+        if (this.supervisor.getDNI().equals(supervisor.getDNI())) {
+            System.out.println("No se puede cambiar por ese SUPERVISOR ya que es el MISMO");
         } else {
-            supervisor = this.supervisor;
+            setSupervisor(supervisor);
         }
     }
 
-    public void incrementarSalario() {
-
-        double incremento=0;
-        double aumento = salario * incremento / 100;
-
-        salario = salario + aumento;
-    }
+    public abstract void incrementarSalario();
 }

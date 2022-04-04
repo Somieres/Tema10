@@ -24,16 +24,24 @@ public class Programador extends Empleado implements CambiosEmpresa {
     Proyecto proyecto;
     Tecnologia tecnologia;
 
-    public Programador(String nombre, String DNI, LocalDate antEmpresa, Empleado supervisor, Portatil portatil,  Proyecto proyecto, Tecnologia tecnologia) {
-        super(nombre, DNI, antEmpresa, supervisor);
+
+    public Programador(String nombre, String apellidos, String DNI, LocalDate antEmpresa, Empleado supervisor, Portatil portatil,  Proyecto proyecto, Tecnologia tecnologia) {
+        super(nombre, apellidos, DNI, antEmpresa, supervisor);
         this.portatil = portatil;
         this.tfnoMovil = 658854458;
         this.proyecto = proyecto;
         this.tecnologia = tecnologia;
     }
 
-    public Programador(String nombre, String DNI, LocalDate antEmpresa, Empleado supervisor) {
-        super(nombre, DNI, antEmpresa, supervisor);
+    public Programador(String nombre, String apellidos, String DNI, LocalDate antEmpresa, Portatil portatil,  Proyecto proyecto, Tecnologia tecnologia) {
+        super(nombre, apellidos, DNI, antEmpresa,null);
+        this.portatil = portatil;
+        this.tfnoMovil = 658854458;
+        this.proyecto = proyecto;
+        this.tecnologia = tecnologia;
+    }
+    public Programador(String nombre, String DNI,LocalDate antEmpresa, Empleado supervisor) {
+        super (nombre,  DNI, antEmpresa, supervisor);
 
 
     }
@@ -73,8 +81,8 @@ public class Programador extends Empleado implements CambiosEmpresa {
 
     @Override
     public String toString() {
-        return super.toString()+" Su puesto en la empresa es de programador, el proyecto en el que trabaja es " + this.proyecto+
-                " y la tecnologia usada es " + this.tecnologia+"."+portatil.toString()+System.lineSeparator();
+        return super.toString()+" Es PROGRAMADOR, su PROYECTO es " + this.proyecto+
+                " y la tecnologia es " + this.tecnologia+"."+portatil.toString()+System.lineSeparator();
     }
 
 
@@ -90,7 +98,7 @@ public class Programador extends Empleado implements CambiosEmpresa {
     public void cambioTecnologia(Tecnologia tecnologia){
 
         if (this.tecnologia.equals(tecnologia)){
-            System.out.println("Esta trabajando con esa tecnologia por lo tanto no tiene sentido el cambio"+System.lineSeparator());
+            System.out.println("Esta trabajando con esa TECNOLOGIA por lo tanto no tiene sentido el CAMBIO "+System.lineSeparator());
         }else{
 
             this.tecnologia=tecnologia;
@@ -102,7 +110,7 @@ public class Programador extends Empleado implements CambiosEmpresa {
     public void cambiarPortatil(Portatil portatil){
 
         if (this.portatil.getNumSerie().equals(portatil.getNumSerie())){
-            System.out.println("Imposible, ya dispone usted de ese portatil"+System.lineSeparator());
+            System.out.println("Imposible, ya dispone usted de ese portatil "+System.lineSeparator());
         }else{
             this.portatil=portatil;
         }

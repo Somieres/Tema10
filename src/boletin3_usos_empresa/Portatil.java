@@ -31,6 +31,7 @@ public class Portatil {
 
     @Override
     public String toString() {
-        return "El portatil de la empresa tiene un numero de serie "+this.numSerie+", el modelo es "+ this.modelo+" y la marca es"+this.MARCA;
+        return "" +
+                "Tiene un PORTATIL de empresa modelo es "+ this.modelo+".";
     }
 }
