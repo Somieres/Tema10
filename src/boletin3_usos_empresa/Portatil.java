@@ -2,12 +2,19 @@ package boletin3_usos_empresa;
 
 public class Portatil {
 
+    /**
+     * ATRIBUTOS
+     */
     public enum Modelo {PAVILION, OMEN, ENVY};
     private String numSerie;
     private final String MARCA="HP";
     private Modelo modelo;
 
-    
+    /**
+     * Metodo constructor
+     * @param numSerie
+     * @param modelo
+     */
     public Portatil(String numSerie, Modelo modelo) {
         this.numSerie = numSerie;
         this.modelo = modelo;
@@ -29,6 +36,10 @@ public class Portatil {
         this.modelo = modelo;
     }
 
+    /**
+     * Sobreescribimos el metodo toString para añadirle los datos de el ordenador
+     * @return
+     */
     @Override
     public String toString() {
         return "" +

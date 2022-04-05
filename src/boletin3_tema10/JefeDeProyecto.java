@@ -24,6 +24,9 @@ Tendrá, al menos, las siguientes funciones miembro:
  */
 public class JefeDeProyecto extends Empleado implements CambiosEmpresa{
 
+    /**
+     * Creamos lo atributos y dos arrayList de la clase Jefe de proyecto
+     */
     ArrayList<Programador> listaTrabajadores = new ArrayList<>();
     ArrayList<Programador.Proyecto> listaProyectos=new ArrayList<>();
     private int numDespacho;
@@ -33,7 +36,19 @@ public class JefeDeProyecto extends Empleado implements CambiosEmpresa{
     private Programador.Tecnologia tecnologia;
 
 
-
+    /**
+     * Creamos un metodo constructor con todos los paramentros, tanto de la clase padres con de la propia clase
+     * @param nombre
+     * @param apellidos
+     * @param DNI
+     * @param antEmpresa
+     * @param supervisor
+     * @param numDespacho
+     * @param coche
+     * @param portatil
+     * @param administrativo
+     * @param tecnologia
+     */
     public JefeDeProyecto(String nombre, String apellidos, String DNI, LocalDate antEmpresa, Empleado supervisor,
                           int numDespacho, Coche coche, Portatil portatil, Administrativo administrativo, Programador.Tecnologia tecnologia) {
         super(nombre, apellidos , DNI, antEmpresa, supervisor);
@@ -44,6 +59,10 @@ public class JefeDeProyecto extends Empleado implements CambiosEmpresa{
         this.tecnologia = tecnologia;
     }
 
+    /**
+     * Metodos getter y setter
+     * @return
+     */
     public int getNumDespacho() {
         return numDespacho;
     }
@@ -84,14 +103,21 @@ public class JefeDeProyecto extends Empleado implements CambiosEmpresa{
         this.tecnologia = tecnologia;
     }
 
+    /**
+     * Sobreescribimos el toString para añadirle los datos de salida
+     * @return
+     */
     @Override
     public String toString() {
         return super.toString() + " Su cargo es jefe de proyecto su despacho es el numero " + this.numDespacho +System.lineSeparator()+
                 " " + coche.toString() + " " + portatil.toString() + " tiene como administrativo a " + this.administrativo.getNombre() +System.lineSeparator()+
-                " y la tecnologia con la que trabaja es " + this.tecnologia + "." +System.lineSeparator()+
-                "------------------------------------------------------------------------------------------------------";
+                " y la tecnologia con la que trabaja es " + this.tecnologia + "." + System.lineSeparator();
     }
 
+    /**
+     * Sobreescribimos el metodo Incrementar salario introduciendole en este caso un 20%
+     * y nos devuelve el salario base mas el 20%
+     */
     @Override
     public void incrementarSalario() {
         double incremento = 20;
@@ -100,6 +126,11 @@ public class JefeDeProyecto extends Empleado implements CambiosEmpresa{
         salario = salario + aumento;
     }
 
+    /**
+     * Metodo para cambiar de administrativo, por el que compara el existente con el que se cambiaria, a traves
+     * del DNI, si es el mismo no deja, y si no lo es, lo cambia
+     * @param administrativo
+     */
     public void cambiarAdministrativo(Administrativo administrativo) {
 
         if (this.administrativo.getDNI().equals(administrativo.getDNI())) {
@@ -109,6 +140,11 @@ public class JefeDeProyecto extends Empleado implements CambiosEmpresa{
         }
     }
 
+    /**
+     * Este metodo utiliza el metodo equals, como el de arriba para compara la clase vehiculo a traves de la matricula
+     * al igual que el de arriba, si es igual sale un mensaje de error pero si es distinta, la cambia
+     * @param coche
+     */
     public void cambiarCoche(Coche coche) {
         if (this.coche.getMatricula().equals(coche.getMatricula())) {
             System.out.println("Usted ya tiene asignado ese VEHICULO" + System.lineSeparator());
@@ -137,6 +173,10 @@ public class JefeDeProyecto extends Empleado implements CambiosEmpresa{
         }
     }
 
+    /**
+     * Metodo para dar de alta a un programador en el arrayList del jefe de proyecto
+     * @param programador
+     */
     public void darAlta(Programador programador) {
         listaTrabajadores.add(programador);
     }
@@ -144,13 +184,14 @@ public class JefeDeProyecto extends Empleado implements CambiosEmpresa{
     public void darBaja(Programador programador) {
         listaTrabajadores.remove(listaTrabajadores.indexOf(programador));
     }
-
     public void gestionarProyectos(Programador.Proyecto proyecto){
       listaProyectos.add(proyecto);
     }
-
     public void dejarGestionProyectos(Programador.Proyecto proyecto){
       listaProyectos.remove(listaProyectos.indexOf(proyecto));
+    }
+    public String devolverTrabajador(){
+        return "El programador se llama "+ getNombre() + ", su DNI es "+getDNI()+"."+System.lineSeparator();
     }
 
     public void mostrarListaTrabajadores( ){

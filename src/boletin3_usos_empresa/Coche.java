@@ -1,13 +1,18 @@
 package boletin3_usos_empresa;
 
 public class Coche {
-
+    /**
+     * Atributos
+     */
     public enum Marca{AUDI, MERCEDES, TESLA, BMW}
     public enum ModeloCoche{BERLINA, SPORT, SUPREME}
     private String matricula;
     private Marca marca;
     private ModeloCoche modelo;
 
+    /**
+     * Metodos constructores
+     */
     public Coche() {
     }
 
@@ -17,6 +22,10 @@ public class Coche {
         this.modelo = modelo;
     }
 
+    /**
+     * Metodos getters y setters
+     * @return
+     */
     public String getMatricula() {
         return matricula;
     }
@@ -41,6 +50,10 @@ public class Coche {
         this.modelo = modelo;
     }
 
+    /**
+     * Sobreescribimos el metodo toString para agregarle los datos del vehiculo
+     * @return
+     */
     @Override
     public String toString() {
         return "Coche empresa matricula "+this.matricula+", la marca es "+this.marca+" y el modelo" +

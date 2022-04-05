@@ -35,7 +35,6 @@ enum Estado {PEDIDA, SERVIDA}
 
      public void servir(){
        this.estadoPedido=Estado.SERVIDA;
-
        contServidos++;
    }
 

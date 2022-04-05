@@ -9,7 +9,7 @@ import java.util.Arrays;
 public class Main_Boletin3 {
     public static void main(String[] args) {
 /**
- * creamos tres tipo un programador, un administrativo y un jefe de proyecto
+ * creamos varios portatiles para meterlos en el constructor de los programadores y Jefes de proyectos
  */
 
         Portatil portatil1=new Portatil("0A", Portatil.Modelo.OMEN);
@@ -20,11 +20,12 @@ public class Main_Boletin3 {
         Portatil portatil6=new Portatil("1A", Portatil.Modelo.OMEN);
         Portatil portatil7=new Portatil("1B", Portatil.Modelo.OMEN);
 
-
+/**
+ * Creamos una serie de programadores
+ */
         Coche coche1=new Coche("5555A", Coche.Marca.TESLA, Coche.ModeloCoche.SUPREME);
         Coche coche=new Coche("6666B", Coche.Marca.MERCEDES, Coche.ModeloCoche.SUPREME);
-
-        Programador p0=new Programador();
+        Programador p0=new Programador();// Programador creado para que sea el supervisor del primer empleado y no de error
         Programador p1 = new Programador("Eva", "Ramos","00000a", LocalDate.of(2025, 6, 20),p0,
             portatil1, Programador.Proyecto.MARVEL, Programador.Tecnologia.FULLERA);
         Programador p2 = new Programador("Manuel","Lopez", "11111a", LocalDate.of(2025, 6, 20),p1
@@ -37,7 +38,9 @@ public class Main_Boletin3 {
                 portatil5, Programador.Proyecto.MARVEL, Programador.Tecnologia.FULLERA);
 
 
-
+/**
+ * utilizamos los metodos de programadores, para comprobar que funcionan
+ */
         p1.cambioTecnologia(Programador.Tecnologia.ACUSICA);
         p1.incrementarSalario();
         p2.incrementarSalario();
@@ -48,12 +51,18 @@ public class Main_Boletin3 {
         System.out.println(p1);
         System.out.println(p2);
 
+        /**
+ * Damos de alta a un administrador y le aplicamos sus metodos
+ */
         Administrativo a1 = new Administrativo("Francisco","Albiñana" , "77j", LocalDate.of(1995, 5, 8)
                 , p1, 6);
         System.out.println(a1);
         a1.incrementarSalario();
         System.out.println(a1);
 
+        /**
+ * Creamos un Jefe de proyecto le aplicamos sus metodos y creamos un arrayList de empleados con su metodo correspondiente
+ */
         JefeDeProyecto j1 = new JefeDeProyecto("Rosario","Leon", "1234ABC", LocalDate.of(1980, 6, 26),
                 a1, 1, coche,portatil6, a1, Programador.Tecnologia.SISMICA);
         System.out.println(j1);
