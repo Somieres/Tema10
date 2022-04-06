@@ -1,6 +1,6 @@
 package ejercicio_clase_28;
 
-public class Cliente {
+public class Cliente implements Comparable {
 
     private String nombre;
     private String dni;
@@ -85,4 +85,18 @@ public class Cliente {
         return "El cliente se llama " + this.nombre +
                 " con dni " + this.dni + " y tiene " + this.edad+ " años"+ System.lineSeparator();
     }
+
+
+    @Override
+    public int compareTo(Object o) {
+        int resultado=0;
+        if (o instanceof Cliente) {
+            Cliente cliente= (Cliente)o;
+            resultado=this.dni.compareTo(cliente.dni);
+        }
+        return resultado;
+    }
+
+
+
 }
