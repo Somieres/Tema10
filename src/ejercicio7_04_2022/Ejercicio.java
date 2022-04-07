@@ -21,7 +21,7 @@ Hacer lo mismo con nuestra clase Empleado que ordenar√° los elementos por antig√
     public static List<Integer> union=new ArrayList<>();
     public static void main(String[] args) {
 
-        //llamamos al metodo agragarNumero para insertar valores en el arrayList
+        //llamamos al metodo agregarNumero para insertar valores en el arrayList
         agregarNumero(lista1,6);
         agregarNumero(lista1,3);
         agregarNumero(lista1,4);
