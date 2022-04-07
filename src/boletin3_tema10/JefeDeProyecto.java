@@ -1,8 +1,8 @@
 package boletin3_tema10;
 
-import boletin3_usos_empresa.CambiosEmpresa;
-import boletin3_usos_empresa.Coche;
-import boletin3_usos_empresa.Portatil;
+import boletin3_tema10.boletin3_usos_empresa.CambiosEmpresa;
+import boletin3_tema10.boletin3_usos_empresa.Coche;
+import boletin3_tema10.boletin3_usos_empresa.Portatil;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -196,11 +196,13 @@ public class JefeDeProyecto extends Empleado implements CambiosEmpresa{
 
     public void mostrarListaTrabajadores( ){
 
-        System.out.println(listaTrabajadores+System.lineSeparator());
-        Iterator miIterador=listaTrabajadores.iterator();
+
+        Iterator<Programador> miIterador=listaTrabajadores.iterator();
 
         for (;miIterador.hasNext();){
-            System.out.println(miIterador.next().toString());
+            Empleado e= miIterador.next();
+            System.out.println(e);
         }
     }
+
 }

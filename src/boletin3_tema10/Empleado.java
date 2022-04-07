@@ -1,7 +1,9 @@
 package boletin3_tema10;
 
 import java.time.LocalDate;
+/*
 
+ */
 public abstract class Empleado {
 
     protected String nombre;

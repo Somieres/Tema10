@@ -1,18 +1,11 @@
 package boletin3_tema10;
-import boletin3_usos_empresa.CambiosEmpresa;
-import boletin3_usos_empresa.Portatil;
+import boletin3_tema10.boletin3_usos_empresa.CambiosEmpresa;
+import boletin3_tema10.boletin3_usos_empresa.Portatil;
 
 import java.time.LocalDate;
 
 /*
-Programador. Tiene portátil de empresa (identificado por número de serie, marca y
-modelo), teléfono móvil, proyecto en el que trabaja, tecnología en la que trabaja.
-Incrementa su salario un 10% anual.
-Tendrá, al menos, las siguientes funciones miembro:
-• Constructores
-• Imprimir (debe imprimir sus datos personales y su puesto en la empresa, proyecto y
-tecnología).
-• Cambiar de tecnolog
+
  */
 public class Programador extends Empleado implements CambiosEmpresa {
 
@@ -73,7 +66,7 @@ public class Programador extends Empleado implements CambiosEmpresa {
     public String toString() {
         return super.toString()+" Es PROGRAMADOR, su PROYECTO es " + this.proyecto+
                 " y la tecnologia es " + this.tecnologia+"."+portatil.toString()+System.lineSeparator()+
-                "------------------------------------------------------------------------------------------------------";
+                "------------------------------------------------------------------------------------------------------"+System.lineSeparator();
     }
 
 

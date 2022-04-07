@@ -1,4 +1,4 @@
-package boletin3_usos_empresa;
+package boletin3_tema10.boletin3_usos_empresa;
 
 public class Portatil {
 

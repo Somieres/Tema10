@@ -18,11 +18,11 @@ public class EjerciciosClase {
 
 
         // con este metodo podemos darle un valor desde una posicion de inicio hasta una final
-        Arrays.fill(num1,-4);
-        System.out.println(Arrays.toString(num1));
+      //  Arrays.fill(num1,-4);
+      //  System.out.println(Arrays.toString(num1));
 
 
-        Arrays.fill(num1,5,8,50);
+        Arrays.fill(num1,5,num1.length,50);
         System.out.println(Arrays.toString(num1));
 
         // sirve para comparar dos arrays devuelve true o false, ver ejemplo;
@@ -34,13 +34,14 @@ public class EjerciciosClase {
         System.out.println(Arrays.binarySearch(num4,4));
         System.out.println("El numero buscado no se encuentra en el array deberia estar en la posicion "+
                 (-Arrays.binarySearch(num4,5)-1));
-
+        System.out.println("El numero buscado se encuantra en la posicion n: "+Arrays.binarySearch(num4,0,4,4));
 
 
         char[] letras2= Arrays.copyOf(letras,letras.length+10);
         System.out.println(Arrays.toString(letras));
         System.out.println("Copia de letras a letras2 y le aumentamos 10 posiciones");
         System.out.println(Arrays.toString(letras2));
+
         System.out.println(Arrays.binarySearch(letras,'h'));
         Arrays.fill(letras2,letras.length, letras2.length,'~');
         Arrays.sort(letras2);
