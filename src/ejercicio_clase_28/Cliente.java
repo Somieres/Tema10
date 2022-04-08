@@ -3,7 +3,7 @@ package ejercicio_clase_28;
 import java.time.LocalDate;
 import java.util.Iterator;
 
-public class Cliente implements Comparable {
+public class Cliente implements Comparable{
 
     private String nombre;
     private String dni;
@@ -116,7 +116,7 @@ public class Cliente implements Comparable {
         int resultado=0;
         if (o instanceof Cliente) {
             Cliente cliente= (Cliente)o;
-            resultado=this.dni.compareTo(cliente.dni);
+            resultado=this.antEmpresa.compareTo(cliente.antEmpresa);
         }
         return resultado;
     }
