@@ -1,5 +1,6 @@
 package ejercicio_clase_28;
 
+import java.time.LocalDate;
 import java.util.Iterator;
 
 public class Cliente implements Comparable {
@@ -7,6 +8,12 @@ public class Cliente implements Comparable {
     private String nombre;
     private String dni;
     private int edad;
+    LocalDate antEmpresa;
+
+    public Cliente(String nombre, LocalDate antEmpresa) {
+        this.nombre = nombre;
+        this.antEmpresa = antEmpresa;
+    }
 
     public Cliente(String nombre, String dni, int edad) {
         this.nombre = nombre;
@@ -15,6 +22,14 @@ public class Cliente implements Comparable {
     }
     public Cliente(String dni){
         this.dni=dni;
+    }
+
+    public LocalDate getAntEmpresa() {
+        return antEmpresa;
+    }
+
+    public void setAntEmpresa(LocalDate antEmpresa) {
+        this.antEmpresa = antEmpresa;
     }
 
     public String getNombre() {

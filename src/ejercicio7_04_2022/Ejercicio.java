@@ -1,10 +1,11 @@
 package ejercicio7_04_2022;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-
+import ejercicio_clase_28.Cliente;
 public class Ejercicio {
 /*    Ejercicio Colecciones. Día 7.04.2022
 Crear una función a la que se le pase dos listas (List) ordenadas y nos devuelva una única lista, fusión de las dos anteriores y que también esté ordenada
@@ -18,48 +19,69 @@ Hacer lo mismo con nuestra clase Empleado que ordenará los elementos por antig�
     //Declaramos los ArrayList que vamos a utilizar en el ejercicio
     public static List<Integer> lista1=new ArrayList<>();
     public static List<Integer> lista2=new ArrayList<>();
-    public static List<Integer> union=new ArrayList<>();
+
     public static void main(String[] args) {
 
         //llamamos al metodo agregarNumero para insertar valores en el arrayList
+      //  Controladora.montoLista ();
         agregarNumero(lista1,6);
-        agregarNumero(lista1,3);
-        agregarNumero(lista1,4);
+        agregarNumero(lista1,8);
+        agregarNumero(lista1,9);
         agregarNumero(lista1,5);
         agregarNumero(lista1,2);
         agregarNumero(lista1,1);
         agregarNumero(lista2,12);
         agregarNumero(lista2,10);
         agregarNumero(lista2,11);
-        agregarNumero(lista2,9);
+        agregarNumero(lista2,4);
         agregarNumero(lista2,7);
-        agregarNumero(lista2,8);
+        agregarNumero(lista2,3);
 
         //Mostramos el resultado de el uso del metodo agregarNumero
         System.out.println("LISTAS DESORDENADAS");
-        System.out.println("Lista numero 1 desordenada"+lista1.toString());
-        System.out.println("Lista numero 2 desordenada"+lista2.toString()+System.lineSeparator());
+        System.out.println("Lista numero 1 desordenada"+lista1);
+        System.out.println("Lista numero 2 desordenada"+lista2+System.lineSeparator());
 
-        //Utilizamos el metodo de ordenacion
+       //Utilizamos el metodo de ordenacion
         ordenarArray(lista1);
         ordenarArray(lista2);
 
         //Mostramos el resultado de el uso del metodo de ordenacion
         System.out.println("LISTAS ORDENADAS");
-        System.out.println("Lista numero 1 ordenada"+lista1.toString());
-        System.out.println("Lista numero 2 ordenada"+lista2.toString()+System.lineSeparator());
+        System.out.println("Lista numero 1 ordenada"+lista1);
+        System.out.println("Lista numero 2 ordenada"+lista2+System.lineSeparator());
 
         //llamada al metodo fusion para unir los dos arrays en uno
-        fusión(lista1,lista2);
+        System.out.println( fusión(lista1,lista2) );
 
+        Cliente e1= new Cliente("Eva",LocalDate.of(2022,1,1));
+        Cliente e2=new Cliente("Vigi",LocalDate.of(2021,1,1));
+        Cliente e3=new Cliente("Esperanza",LocalDate.of(2020,1,1));
+        Cliente e4=new Cliente("Jesus",LocalDate.of(2019,1,1));
+        Cliente e5=new Cliente("Paco",LocalDate.of(2018,1,1));
+        Cliente e6=new Cliente("Manuel",LocalDate.of(2017,1,1));
         //Mostramos el resultado de la accion anterior
-        System.out.println("LISTAS UNIFICADAS");
-        System.out.println("La union de las dos listas en una da como resultado "+union.toString()+System.lineSeparator());
+      //  System.out.println("LISTAS UNIFICADAS");
+       // fusión(lista1,lista2);
+        List<Empleado> lista3=new ArrayList<>();
+        List<Empleado> lista4=new ArrayList<>();
+
+        lista3.add(e6);
+        lista3.add(e4);
+        lista3.add(e5);
+        lista4.add(e1);
+        lista4.add(e3);
+        lista4.add(e2);
+
+        System.out.println(lista3.toString());
+        System.out.println(lista4.toString());
+
+
 
         //Compruebo que las listas siguen existiendo y que no se han eliminado al usar el metodo fusion
-        System.out.println("NO EXISTE PERDIDA DE LISTAS");
-        System.out.println("Lista numero 1 ordenada"+lista1.toString());
-        System.out.println("Lista numero 2 ordenada"+lista2.toString());
+       // System.out.println("NO EXISTE PERDIDA DE LISTAS");
+       // System.out.println("Lista numero 1 ordenada"+lista1.toString());
+       // System.out.println("Lista numero 2 ordenada"+lista2.toString());
     }
 
     /**
@@ -84,11 +106,39 @@ Hacer lo mismo con nuestra clase Empleado que ordenará los elementos por antig�
      * @param lista
      * @param tonta
      */
-    public static void  fusión(List <Integer> lista, List <Integer> tonta){
+    public static List <Integer>  fusión(List <Integer> lista, List <Integer> tonta){
 
-        union.addAll(lista);
-        union.addAll(tonta);
+        Integer i=0;
+        Integer j=0;
+        List<Integer> union=new ArrayList<>();
 
+        while( i < lista1.size() && j< lista2.size()){
+            if (lista2.get(j)<lista1.get(i)){
+                union.add(lista2.get(j));
+                j++;
+            }else
+                if(lista1.get(i)< lista2.get(j)){
+                union.add(lista1.get(i));
+                i++;
+            }
+        }
+        //compruebo si no he llegado al final de alguna lista y la vuelco en union
+        if (i<lista1.size()){
+            while (i<lista1.size()){
+                union.add(lista1.get(i));
+                i++;
+
+            }
+        }
+        if (j<lista2.size()){
+            while (j<lista2.size()){
+            union.add(lista2.get(j));
+                j++;
+
+            }
+        }
+
+        return union;
     }
 
 }

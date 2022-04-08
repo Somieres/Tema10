@@ -58,8 +58,8 @@ public class Main_ejercicio_clase_28 {
 
 
         Cliente estefania=new Cliente("Estefania","55555D",150);
-        //odenamos el array por el nombre implementado el compareTo creado en la clase cliente
-         Collections.sort(listaCliente,new CompararNombre());
+//odenamos el array por el nombre implementado el compareTo creado en la clase cliente
+      Collections.sort(listaCliente,new CompararNombre());
 
       //devuelve la posicion en la que deberia introducirse a Estefania, en este caso el -1 que seria la posision 0
         System.out.println(listaCliente);
