@@ -92,16 +92,23 @@ public class Cliente implements Comparable {
         return igual;
     }
 
+    @Override
+    public String toString() {
+        return "nombre '" + this.nombre + ", antEmpresa " + this.antEmpresa+System.lineSeparator();
+    }
+
     /**
      * Sobreescribimos el metodo toString para poder imprimir por pantalla el array list, solo escribiendo
      * el nombre
      * @return
      */
-    @Override
+  /*  @Override
     public String toString() {
         return "El cliente se llama " + this.nombre +
                 " con dni " + this.dni + " y tiene " + this.edad+ " años"+ System.lineSeparator();
-    }
+    }*/
+
+
 
 
     @Override

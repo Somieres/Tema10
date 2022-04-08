@@ -63,8 +63,8 @@ Hacer lo mismo con nuestra clase Empleado que ordenará los elementos por antig�
         //Mostramos el resultado de la accion anterior
       //  System.out.println("LISTAS UNIFICADAS");
        // fusión(lista1,lista2);
-        List<Empleado> lista3=new ArrayList<>();
-        List<Empleado> lista4=new ArrayList<>();
+        List<Cliente> lista3=new ArrayList<>();
+        List<Cliente> lista4=new ArrayList<>();
 
         lista3.add(e6);
         lista3.add(e4);
