@@ -51,15 +51,16 @@ public class Main_ejercicio_clase_28 {
         //Meter elemementos a traves del mismo array
         listaCliente.add(new Cliente("Manuel","284585454L",20));
         // Eliminiar elemento del array list
-       // listaCliente.remove(cliente);
+        // listaCliente.remove(cliente);
         // Implementamos el metodo equals en la clase Cliente y lo comparamos con el dni y nos devuelve un true o un
         // false dependiendo de los datos introducidos son iguales o no. Implementamos este metodo para poder hacer
         // un contains
 
 
         Cliente estefania=new Cliente("Estefania","55555D",150);
-//odenamos el array por el nombre implementado el compareTo creado en la clase cliente
-      Collections.sort(listaCliente,new CompararNombre());
+
+        //odenamos el array por el nombre implementado el compareTo creado en la clase cliente
+        Collections.sort(listaCliente,new CompararNombre());
 
       //devuelve la posicion en la que deberia introducirse a Estefania, en este caso el -1 que seria la posision 0
         System.out.println(listaCliente);
@@ -86,4 +87,7 @@ public class Main_ejercicio_clase_28 {
 
 
     }
+
+
+
 }

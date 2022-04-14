@@ -6,7 +6,9 @@ import boletin3_tema10.boletin3_usos_empresa.Portatil;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
+import java.util.List;
 
 /*
 Tiene despacho, tiene un administrativo/a a su cargo, una lista de
@@ -27,8 +29,8 @@ public class JefeDeProyecto extends Empleado implements CambiosEmpresa{
     /**
      * Creamos lo atributos y dos arrayList de la clase Jefe de proyecto
      */
-    ArrayList<Programador> listaTrabajadores = new ArrayList<>();
-    ArrayList<Programador.Proyecto> listaProyectos=new ArrayList<>();
+    public List<Programador> listaTrabajadores = new ArrayList<>();
+    List<Programador.Proyecto> listaProyectos=new ArrayList<>();
     private int numDespacho;
     private Coche coche;
     private Portatil portatil;
@@ -195,7 +197,6 @@ public class JefeDeProyecto extends Empleado implements CambiosEmpresa{
     }
 
     public void mostrarListaTrabajadores( ){
-
 
         Iterator<Programador> miIterador=listaTrabajadores.iterator();
 

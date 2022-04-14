@@ -4,6 +4,7 @@ import boletin3_tema10.boletin3_usos_empresa.Coche;
 import boletin3_tema10.boletin3_usos_empresa.Portatil;
 
 import java.time.LocalDate;
+import java.util.List;
 
 public class Main_Boletin3 {
     public static void main(String[] args) {
@@ -97,7 +98,7 @@ public class Main_Boletin3 {
         System.out.println(System.lineSeparator()+"El jefe de proyecto "+ j1.getNombre()+" "+ j1.getApellidos()+", tiene a su cargo"+System.lineSeparator());
         ((JefeDeProyecto) j1).mostrarListaTrabajadores();
         System.out.println(((JefeDeProyecto) j1).listaProyectos.toString());
-
+        System.out.println((j1).compareTo(((JefeDeProyecto) j1).listaTrabajadores));
 
     }
 }

@@ -22,20 +22,21 @@ Hacer lo mismo con nuestra clase Empleado que ordenar√° los elementos por antig√
 
     public static void main(String[] args) {
 
-        //llamamos al metodo agregarNumero para insertar valores en el arrayList
-      //  Controladora.montoLista ();
-        agregarNumero(lista1,6);
-        agregarNumero(lista1,8);
-        agregarNumero(lista1,9);
-        agregarNumero(lista1,5);
-        agregarNumero(lista1,2);
-        agregarNumero(lista1,1);
-        agregarNumero(lista2,12);
-        agregarNumero(lista2,10);
-        agregarNumero(lista2,11);
-        agregarNumero(lista2,4);
-        agregarNumero(lista2,7);
-        agregarNumero(lista2,3);
+        /**
+         * insertamos datos en los arrayList arbitrariamente
+         */
+        lista1.add(6);
+        lista1.add(8);
+        lista1.add(9);
+        lista1.add(5);
+        lista1.add(2);
+        lista1.add(1);
+        lista2.add(12);
+        lista2.add(10);
+        lista2.add(11);
+        lista2.add(4);
+        lista2.add(7);
+        lista2.add(3);
 
         //Mostramos el resultado de el uso del metodo agregarNumero
         System.out.println("LISTAS DESORDENADAS");
@@ -61,8 +62,8 @@ Hacer lo mismo con nuestra clase Empleado que ordenar√° los elementos por antig√
         Cliente e5=new Cliente("Paco",LocalDate.of(2018,1,1));
         Cliente e6=new Cliente("Manuel",LocalDate.of(2017,1,1));
         //Mostramos el resultado de la accion anterior
-      //  System.out.println("LISTAS UNIFICADAS");
-       // fusi√≥n(lista1,lista2);
+        //  System.out.println("LISTAS UNIFICADAS");
+        // fusi√≥n(lista1,lista2);
         List<Cliente> lista3=new ArrayList<>();
         List<Cliente> lista4=new ArrayList<>();
 
@@ -76,22 +77,9 @@ Hacer lo mismo con nuestra clase Empleado que ordenar√° los elementos por antig√
         System.out.println(lista3.toString());
         System.out.println(lista4.toString());
 
-
-
-        //Compruebo que las listas siguen existiendo y que no se han eliminado al usar el metodo fusion
-       // System.out.println("NO EXISTE PERDIDA DE LISTAS");
-       // System.out.println("Lista numero 1 ordenada"+lista1.toString());
-       // System.out.println("Lista numero 2 ordenada"+lista2.toString());
     }
 
-    /**
-     * Metodo para insertar datos en un arrayList, le pasamos por paramentros el arrayList y el numero que deseamos introducir
-     * @param lista
-     * @param num
-     */
-    public static void agregarNumero(List<Integer> lista,int num){
-        lista.add(num);
-    }
+
 
     /**
      * Metodo para ordenar el arrayList, aqui le pasamos por parametros el arrayList que deseamos ordenar

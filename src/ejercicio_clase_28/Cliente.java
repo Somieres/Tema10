@@ -56,12 +56,7 @@ public class Cliente implements Comparable{
         this.edad = edad;
     }
 
-    /**
-     * Sobreescribimos el metodo equals para poder
-     * @param o
-     * @return
-     */
-    @Override
+
 
     /*    Paco`s Method
     @Override
@@ -75,7 +70,7 @@ public class Cliente implements Comparable{
         return salir;
     }
      */
-    public boolean equals(Object o) {
+   public boolean equals(Object o) {
 
         boolean igual = false;
         if (this == o)
@@ -97,26 +92,15 @@ public class Cliente implements Comparable{
         return "nombre '" + this.nombre + ", antEmpresa " + this.antEmpresa+System.lineSeparator();
     }
 
-    /**
-     * Sobreescribimos el metodo toString para poder imprimir por pantalla el array list, solo escribiendo
-     * el nombre
-     * @return
-     */
-  /*  @Override
-    public String toString() {
-        return "El cliente se llama " + this.nombre +
-                " con dni " + this.dni + " y tiene " + this.edad+ " años"+ System.lineSeparator();
-    }*/
 
 
 
-
-    @Override
+   @Override
     public int compareTo(Object o) {
         int resultado=0;
         if (o instanceof Cliente) {
             Cliente cliente= (Cliente)o;
-            resultado=this.antEmpresa.compareTo(cliente.antEmpresa);
+            resultado=this.dni.compareTo(cliente.dni);
         }
         return resultado;
     }

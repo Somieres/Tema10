@@ -4,7 +4,7 @@ import java.time.LocalDate;
 /*
 
  */
-public abstract class Empleado {
+public abstract class Empleado implements Comparable {
 
     protected String nombre;
     protected String apellidos;
@@ -108,5 +108,16 @@ public abstract class Empleado {
         }
     }
 
+
     public abstract void incrementarSalario();
+
+
+    public int compareTo(Object o) {
+        int igual=-1;
+        if (o instanceof Empleado){
+            Empleado empleado=(Empleado)o;
+            igual=this.antEmpresa.compareTo(empleado.antEmpresa);
+            }
+        return igual;
+    }
 }
