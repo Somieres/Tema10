@@ -2,7 +2,7 @@ package ejercicio_clase_8_04_2022;
 
 import java.util.*;
 
-public class Ejercicio2 {
+public class Ejercicio2{
 
     /**
      * 2. Crear una colección de 20 números enteros aleatorios distintos y menores que 100.
@@ -13,7 +13,12 @@ public class Ejercicio2 {
     public static void main(String[] args) {
 
 
-        List<Integer> listaNumeros = new ArrayList<>();
+        Set<Integer> listaNumeros = new TreeSet<>(new Comparator<Integer>() {
+            @Override
+            public int compare(Integer o1, Integer o2) {
+                return o2-o1;
+            }
+        });
 
         Integer numero = 0;
         int i = 1;
@@ -24,14 +29,6 @@ public class Ejercicio2 {
             numero = (int) (Math.random() * 100);
             listaNumeros.add(numero);
 
-            Collections.sort(listaNumeros);
-
-           /* if (listaNumeros.get(i - 1) == listaNumeros.get(i)) {
-                listaNumeros.remove(i);
-                listaNumeros.add( i, (int) (Math.random() * 100));
-
-            }*/
-            Collections.reverse(listaNumeros);
             i++;
         }
 
